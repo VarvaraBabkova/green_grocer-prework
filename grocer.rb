@@ -46,7 +46,7 @@ def consolidate_cart(cart)
     #binding.pry
     final_hash[item.keys[0]][:count] += 1
   end
-  return final_hash
+  return final_hash.to_a
 end
 
 
