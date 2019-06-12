@@ -52,6 +52,7 @@ end
 
 
 def apply_clearance(cart)
+  puts cart
   cart.each do |item, item_hash|
     if item_hash[:clearance]
       item_hash[:price] = item_hash[:price]*80/100
