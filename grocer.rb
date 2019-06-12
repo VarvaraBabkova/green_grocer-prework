@@ -3,7 +3,9 @@ require "pry"
 def apply_coupons(cart, coupons)
   add_cart = {}
   puts  " all coupons " + coupons.to_s
-
+  if coupons == []
+    return cart
+  end
   coupons.each do |coupon|
     puts
     puts "coupon before - " + coupon.to_s
