@@ -58,7 +58,16 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  # code here
+  cart = apply_coupons(cart, coupons)
+  cart = apply_clearance(cart)
+  total = 0
+  cart.each do |item, item_hash|
+    total += item_hash[:price] * item_hash[:count]
+  end
+  if total > 100
+    return total * 10/100
+  end
+  return total
 end
 
 #apply_coupons({"AVOCADO"=>{:price=>3.0, :clearance=>true, :count=>5}}, [{:item=>"AVOCADO", :num=>2, :cost=>5.0},
