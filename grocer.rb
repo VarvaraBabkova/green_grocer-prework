@@ -10,7 +10,7 @@ def apply_coupons(cart, coupons)
     puts "cart before " + cart.to_s
 
     cart.each do |item_name, item_hash|
-      if coupon[:item] == item_name
+      if (coupon[:item] == item_name) && (item_hash[:count] >= coupon[:num])
         add_cart[item_name + " W/COUPON"] = {
                                             :price => coupon[:cost],
                                             :clearance => item_hash[:clearance],
