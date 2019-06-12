@@ -62,7 +62,7 @@ end
 def checkout(cart, coupons)
   puts cart
 
-  cart = apply_coupons(cart, coupons)
+  cart = apply_coupons(cart, coupons)[0]
   puts "after coupons " + cart.to_s
 
   cart = apply_clearance(cart)
