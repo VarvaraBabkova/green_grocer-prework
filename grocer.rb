@@ -18,7 +18,7 @@ def apply_coupons(cart, coupons)
                                             (add_cart[item_name + " W/COUPON"][:count] += 1) : 1)
                                           }
         item_hash[:count] = item_hash[:count] - coupon[:num]
-        coupon[:item] = ""
+        coupon = nil
       end
     end #cart
 
