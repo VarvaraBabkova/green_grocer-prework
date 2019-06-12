@@ -63,10 +63,10 @@ def checkout(cart, coupons)
   puts cart
 
   cart = apply_coupons(cart, coupons)
-  puts "after coupons " + cart
+  puts "after coupons " + cart.to_s
 
   cart = apply_clearance(cart)
-  puts "after clearnce " + cart
+  puts "after clearnce " + cart.to_s
 
   total = 0
   cart.each do |item, item_hash|
