@@ -14,7 +14,8 @@ def apply_coupons(cart, coupons)
         add_cart[item_name + " W/COUPON"] = {
                                             :price => coupon[:cost],
                                             :clearance => item_hash[:clearance],
-                                            :count => ()
+                                            :count => (add_cart.include?(item_name + " W/COUPON")?
+                                            (add_cart[item_name + " W/COUPON"][:count] += 1) : 1)
                                           }
         item_hash[:count] = item_hash[:count] - coupon[:num]
         coupon[:item] = ""
